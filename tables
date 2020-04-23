@@ -1,0 +1,67 @@
+CREATE table posts (
+	id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+    subject varchar(128) not null,
+    content varchar(1024) not null,
+    date datetime not null
+);
+
+
+
+INSERT into posts (subject, content, date) VALUES ('This is the subject', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.', '2020-04-15 16:38:01');
+
+
+
+UPDATE posts 
+SET subject = 'first subj', content = 'new content'
+WHERE id = '1'
+
+SELECT * FROM posts ORDER BY id ASC
+
+
+CREATE TABLE users (
+	user_id int(11) AUTO_INCREMENT PRIMARY KEY NOT null,
+    user_first varchar(256) NOT null,
+    user_second varchar(256) NOT null,
+    user_email varchar(256) NOT null,
+    user_uid varchar(256) NOT null,
+    user_pwd varchar(256) NOT null
+);
+
+
+
+ <?php
+    $sqlGet = "SELECT * FROM users;";
+    $getResult = mysqli_query($conn, $sqlGet);
+    $resultCheck = mysqli_num_rows($getResult);
+
+    if($resultCheck > 0){
+      while ($row = mysqli_fetch_assoc($getResult)) {
+        echo $row['user_uid']. '<br>';
+        // echo "{$row['user_uid']}<br>";
+      }
+    }
+
+    $sqlPut = "INSERT INTO users (user_first, user_last, user_email, user_uid, user_pwd)
+    VALUES ('Max', 'Clydesdale', 'maximmuss@gmail.com', 'theMax', 'moresnackoz');";
+
+    mysqli_query($conn, $sqlPut);
+
+
+    
+  ?>
+
+
+  CREATE table comments (
+	cid int(11) not null PRIMARY KEY AUTO_INCREMENT,
+    uid varchar(128) NOT null,
+    content TEXT NOT null,
+    date datetime NOT null
+);
+
+
+CREATE TABLE users (
+	id_users int (11) AUTO_INCREMENT PRIMARY KEY NOT null,
+    uid_users TINYTEXT NOT null,
+    email_users TINYTEXT NOT null,
+    pwd_users LONGTEXT NOT null
+)

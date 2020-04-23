@@ -1,0 +1,54 @@
+body{
+  background-color: #dddd;
+}
+
+.wrapper{
+  width:100vw;
+  text-align: center;
+  margin-top:50px;
+}
+.inner{
+  width:900px;
+  margin: 0 auto;
+}
+textarea{
+  width:320px;
+  height:70px;
+  resize: none;
+}
+button{
+  width: 36%;
+  height: 30px;
+  background-color: #282828;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  border-radius: 3px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.comments{
+  overflow: scroll;
+  margin:10px auto;
+  width: 70%;;
+  height:250px;
+  background-color: #fff;
+}
+.commentBox{
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:12px;
+  line-height: 45px;
+  margin:1px auto;
+  width:99%;
+  height:45px;
+  border:1px solid rgba(0, 0, 0, 0.267);
+}
+.uid{
+  font-size: 10px;
+  position: absolute;
+  right: 5px;
+  bottom: -15px;
+  color: rgba(128, 128, 128, 0.479);
+}
