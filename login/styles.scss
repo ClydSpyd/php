@@ -116,7 +116,7 @@ nav{
   h5{
     margin: 15px 0;
     // color: yellowgreen;
-    color: tomato;
+    color: red;
     // color: orangered;
     font-weight: 400;
   }
@@ -132,3 +132,28 @@ nav{
   }
   
 }
+
+#users {
+  @include flexCol();
+  width:60%;
+
+  .user{
+    height:30px;
+    width:150px;
+    @include flexRow();
+    justify-content: space-between;
+  }
+  h5{
+    color: chartreuse;
+    margin:15px 0 10px 0 ;
+  } 
+  button {
+    width: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }  
+}
+

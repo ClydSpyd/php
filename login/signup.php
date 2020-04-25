@@ -36,6 +36,7 @@
     } else {
       $signupCheck = $_GET['signup'];
       
+      // if($_GET['signup'] == 'emptyfields'){
       if($signupCheck == 'emptyfields'){
         echo " Please complete all fields";
         exit();
@@ -56,7 +57,7 @@
         echo "error communicating with database :(";
         exit();
       } elseif($signupCheck == 'nametaken'){
-        echo "username already exists, please select another";
+        echo "username taken, please select another";
         exit();
       } elseif($signupCheck == 'success'){
         echo "<span class='success'>Signed up successfully!</span>";

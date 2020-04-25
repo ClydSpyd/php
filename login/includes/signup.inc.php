@@ -35,7 +35,7 @@ if (isset($_POST['signupSubmit'])) {
     if (!mysqli_stmt_prepare($stmt, $sql)) {
       header("location: ../signup.php?signup=sqlerror");
       exit();
-      
+
     } else {
       mysqli_stmt_bind_param($stmt, 's', $uid);
       mysqli_stmt_execute($stmt);
@@ -64,7 +64,30 @@ if (isset($_POST['signupSubmit'])) {
           mysqli_stmt_bind_param($stmt, 'sss', $uid, $mail, $hashedPwd);
           mysqli_stmt_execute($stmt);
           header("location: ../signup.php?signup=success");
+          
+
+           //CREATE USER BOOKS TABLE IN DATABASE
+           $sql = "CREATE TABLE readingList.books_".$uid."(
+            id int(11) NOT null PRIMARY KEY AUTO_INCREMENT,
+            title varchar(128) NOT null,
+            author varchar(128) NOT null
+           )
+           ";
+           
+           $sqlB="INSERT INTO readingList.books_".$uid." (title, author) VALUES ('The End of Eternity', 'Isaac Asimov')";
+
+           $stmt = mysqli_stmt_init($connDB);
+
+           if (!mysqli_stmt_prepare($stmt, $sql)) {
+             header("location: ../signup.php?signup=sqlerrorCREATE");
+             exit();
+             
+           } else {
+             mysqli_stmt_execute($stmt);
+             $result = $connDB->query($sqlB);
+             header("location: ../signup.php?signup=success");
           exit();
+        }
         }
       }
     }

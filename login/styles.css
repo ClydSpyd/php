@@ -109,7 +109,7 @@ nav .logoutBtn {
 }
 .signupFormMain h5 {
   margin: 15px 0;
-  color: tomato;
+  color: red;
   font-weight: 400;
 }
 .signupFormMain form {
@@ -124,6 +124,35 @@ nav .logoutBtn {
 }
 .signupFormMain .success {
   color: chartreuse;
+}
+
+#users {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+#users .user {
+  height: 30px;
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  justify-content: space-between;
+}
+#users h5 {
+  color: chartreuse;
+  margin: 15px 0 10px 0;
+}
+#users button {
+  width: 50px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+#users button:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=styles.css.map */
